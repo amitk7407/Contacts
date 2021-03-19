@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native'
+import { StyleSheet, View, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
 import DropdownWithInput from './DropdownWithInput'
@@ -26,11 +26,7 @@ const EditContact = ({ navigation, dispatchContact, contact }) => {
     }
 
     return (
-        <KeyboardAvoidingView
-            behavior={"position"}
-            keyboardVerticalOffset={-150}
-            style={styles.container}
-        >
+        <ScrollView style={styles.container}>
             <View style={styles.iconsContainer}>
                 <TouchableOpacity onPress={handleCancel}>
                     <Ionicons name="close" style={styles.icon} />
@@ -72,7 +68,7 @@ const EditContact = ({ navigation, dispatchContact, contact }) => {
                 eventKey='email'
                 handleChange={handleChange}
             />
-        </KeyboardAvoidingView>
+        </ScrollView >
     )
 }
 
